@@ -49,6 +49,16 @@ class Game:
 
             self.screen.fill((255, 255, 255))
 
+            font = pygame.font.Font(None, 24)
+            score_text = font.render(f"Score: {self.player.score}", True, (0, 0, 0))
+            speed_text = font.render(f"Vitesse: {self.player.speed}", True, (0, 0, 0))
+            size_text = font.render(f"Taille: {self.player.size}", True, (0, 0, 0))
+            difficulty_text = font.render(f"Difficulté: {self.player.difficulty}", True, (0, 0, 0))
+            self.screen.blit(score_text, (SCREEN_WIDTH - score_text.get_width() - 10, 10))
+            self.screen.blit(speed_text, (SCREEN_WIDTH - speed_text.get_width() - 10, 30))
+            self.screen.blit(size_text, (SCREEN_WIDTH - size_text.get_width() - 10, 50))
+            self.screen.blit(difficulty_text, (SCREEN_WIDTH - difficulty_text.get_width() - 10, 70))
+
             for food in self.food_list:
                 food.draw(self.screen)
 
