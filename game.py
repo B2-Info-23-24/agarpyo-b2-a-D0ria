@@ -4,7 +4,7 @@ from player import Player
 
 class Game:
     def __init__(self):
-        self.screen = pygame.display.set_mode((800, 600))
+        self.screen = pygame.display.set_mode((1280, 720))
         pygame.display.set_caption("Agarpyo")
         self.clock = pygame.time.Clock()
 
