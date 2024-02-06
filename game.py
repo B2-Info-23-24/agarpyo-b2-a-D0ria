@@ -13,6 +13,7 @@ class Game:
         self.clock = pygame.time.Clock()
         self.player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
         self.food_list = [] 
+        self.start_time = pygame.time.get_ticks()
 
     def generate_food(self, num_food, width, height):
         for _ in range(num_food):
@@ -54,10 +55,16 @@ class Game:
             speed_text = font.render(f"Vitesse: {self.player.speed}", True, (0, 0, 0))
             size_text = font.render(f"Taille: {self.player.size}", True, (0, 0, 0))
             difficulty_text = font.render(f"Difficulté: {self.player.difficulty}", True, (0, 0, 0))
+
+            elapsed_time = (pygame.time.get_ticks() - self.start_time) // 1000
+            time_left = max(0, 60 - elapsed_time)  
+            timer_text = font.render(f"Temps restant: {time_left} secondes", True, (0, 0, 0))
+
             self.screen.blit(score_text, (SCREEN_WIDTH - score_text.get_width() - 10, 10))
             self.screen.blit(speed_text, (SCREEN_WIDTH - speed_text.get_width() - 10, 30))
             self.screen.blit(size_text, (SCREEN_WIDTH - size_text.get_width() - 10, 50))
             self.screen.blit(difficulty_text, (SCREEN_WIDTH - difficulty_text.get_width() - 10, 70))
+            self.screen.blit(timer_text, (SCREEN_WIDTH - timer_text.get_width() - 10, 90))
 
             for food in self.food_list:
                 food.draw(self.screen)
