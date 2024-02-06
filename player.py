@@ -1,5 +1,6 @@
 import pygame
 import sys
+import random
 
 class Player:
     def __init__(self, x, y):
@@ -54,31 +55,14 @@ class Player:
         if keys[pygame.K_s]:
             self.y += move_distance
 
-    def run(self):
-        SCREEN_WIDTH = 1280
-        SCREEN_HEIGHT = 720
-        player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
-        self.set_difficulty(selected_option)  # Appel de la méthode pour configurer la difficulté
-        running = True
-        while running:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    running = False
-                elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE:
-                        pygame.quit()
-                        sys.exit()
-
-            player.move_with_mouse()
-            player.move_with_keyboard()
-
-            self.screen.fill((255, 255, 255))
-
-            player.draw(self.screen)
-
-            pygame.display.flip()
-
-            self.clock.tick(60)
+        if self.x < 0:
+            self.x = 1280
+        elif self.x > 1280:
+            self.x = 0 
+        if self.y < 0:
+            self.y = 720  
+        elif self.y > 720:
+            self.y = 0
 
     def draw(self, surface):
         pygame.draw.circle(surface, (255, 0, 0), (int(self.x), int(self.y)), self.size)
