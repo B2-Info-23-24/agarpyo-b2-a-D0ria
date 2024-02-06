@@ -53,6 +53,7 @@ player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
 
 def run_game():
     game = Game()
+    game.player.set_difficulty(selected_option)
     game.run()
 
 running = True
