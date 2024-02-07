@@ -16,16 +16,26 @@ class Game:
         self.start_time = pygame.time.get_ticks()  # Temps de départ
         self.game_over = False
 
-    def generate_food(self, num_food, width, height):
+    def generate_food(self, difficulty, width, height):
+        if difficulty == "Easy":
+            num_food = 5
+        elif difficulty == "Normal":
+            num_food = 3
+        elif difficulty == "Hard":
+            num_food = 2
+        else:
+            num_food = 0  
         for _ in range(num_food):
             food = Food(width, height)
             self.food_list.append(food)
+
 
     def run(self):
         SCREEN_WIDTH = 1280
         SCREEN_HEIGHT = 720
         # self.player.set_difficulty(selected_option)
-        self.generate_food(20, SCREEN_WIDTH, SCREEN_HEIGHT)  
+        self.generate_food(self.player.difficulty, SCREEN_WIDTH, SCREEN_HEIGHT)
+  
 
         running = True
         while running:

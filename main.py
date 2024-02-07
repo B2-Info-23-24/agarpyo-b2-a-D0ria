@@ -81,7 +81,9 @@ while running:
                 option_index = (mouse_pos[1] - dropdown_rect.bottom) // dropdown_height
                 if 0 <= option_index < len(options):
                     selected_option = options[option_index]
+                    player.set_difficulty(selected_option)  # Mettre à jour la difficulté du joueur
                     options_visible = False
+
 
             if quit_button_rect.collidepoint(mouse_pos):
                 pygame.quit()
