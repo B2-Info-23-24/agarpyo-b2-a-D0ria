@@ -1,11 +1,11 @@
 import pygame
 import random
 
-BROWN = (139, 69, 19)  
+BROWN = (0, 255, 0)  
 
-class Food:
+class Trap:
     def __init__(self, width, height):
-        self.size = 20 
+        self.size = random.randint(40, 150)   
         self.randomize_position(width, height)
         
     def randomize_position(self, width, height):
