@@ -44,6 +44,9 @@ class Game:
             trap = Trap(width, height)
             self.trap_list.append(trap)
 
+    def set_control_mode(self, mode):
+        self.player.set_control_mode(mode)
+
 
     def run(self):
         SCREEN_WIDTH = 1280
@@ -63,8 +66,7 @@ class Game:
 
             if not self.game_over:
                 
-                self.player.move_with_mouse()
-                self.player.move_with_keyboard()
+                self.player.move()
 
                 for food in self.food_list:
                     if pygame.Rect(self.player.x - self.player.size, self.player.y - self.player.size, self.player.size * 2, self.player.size * 2).colliderect(pygame.Rect(food.position[0] - food.size, food.position[1] - food.size, food.size * 2, food.size * 2)):

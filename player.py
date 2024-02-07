@@ -1,6 +1,4 @@
 import pygame
-import sys
-import random
 
 class Player:
     def __init__(self, x, y):
@@ -11,6 +9,8 @@ class Player:
         self.size = 40
         self.control_mode = None
         self.difficulty = None
+        self.mouse_control_enabled = False
+        self.keyboard_control_enabled = False
 
     def set_difficulty(self, difficulty):
         self.difficulty = difficulty
@@ -22,12 +22,19 @@ class Player:
             self.num_balls = 2
 
     def set_control_mode(self, mode):
-        self.control_mode = mode
+        if mode == "keyboard":
+            self.control_mode = "keyboard"
+            self.mouse_control_enabled = False
+            self.keyboard_control_enabled = True
+        elif mode == "mouse":
+            self.control_mode = "mouse"
+            self.mouse_control_enabled = True
+            self.keyboard_control_enabled = False
 
     def move(self):
         if self.control_mode == "mouse":
             self.move_with_mouse()
-        elif self.control_mode == "keyboard":
+        else:
             self.move_with_keyboard()
 
     def move_with_mouse(self):

@@ -67,29 +67,32 @@ while running:
                 sys.exit()
         elif event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = pygame.mouse.get_pos()
-            if mouse_button_rect.collidepoint(mouse_pos):  
-                control_mode = "mouse"  
-                player.set_control_mode("mouse")
-                run_game()  
-            elif keyboard_button_rect.collidepoint(mouse_pos):  
-                control_mode = "keyboard"  
-                player.set_control_mode("keyboard")
-                run_game()  
+            if mouse_button_rect.collidepoint(mouse_pos):
+                selected_option = "Easy"
+                player.set_difficulty(selected_option)
+                player.set_control_mode("mouse") 
+                run_game()
+            elif keyboard_button_rect.collidepoint(mouse_pos):
+                selected_option = "Easy"
+                player.set_difficulty(selected_option)
+                player.set_control_mode("keyboard") 
+                run_game()
             if dropdown_rect.collidepoint(mouse_pos):
                 options_visible = not options_visible
             elif options_visible:
                 option_index = (mouse_pos[1] - dropdown_rect.bottom) // dropdown_height
                 if 0 <= option_index < len(options):
                     selected_option = options[option_index]
-                    player.set_difficulty(selected_option)  
+                    player.set_difficulty(selected_option)
                     options_visible = False
-
-
             if quit_button_rect.collidepoint(mouse_pos):
                 pygame.quit()
                 sys.exit()
-
+    
     screen.fill(BLACK)
+    
+    if player.control_mode == "mouse":
+        player.move()
 
     def draw_button(surface, color, x, y, width, height, text, text_color, font):
         pygame.draw.rect(surface, color, (x, y, width, height))
@@ -118,4 +121,3 @@ while running:
 
 pygame.quit()
 sys.exit()
-
