@@ -7,7 +7,7 @@ class Player:
         self.score = 0
         self.speed = 100
         self.size = 40
-        self.control_mode = None
+        self.control_mode = ""
         self.difficulty = None
         self.mouse_control_enabled = False
         self.keyboard_control_enabled = False
@@ -22,6 +22,7 @@ class Player:
             self.num_balls = 2
 
     def set_control_mode(self, mode):
+        print(mode)
         if mode == "keyboard":
             self.control_mode = "keyboard"
             self.mouse_control_enabled = False
@@ -30,11 +31,12 @@ class Player:
             self.control_mode = "mouse"
             self.mouse_control_enabled = True
             self.keyboard_control_enabled = False
+            print(self.control_mode)
 
     def move(self):
         if self.control_mode == "mouse":
             self.move_with_mouse()
-        else:
+        elif self.control_mode == "keyboard":
             self.move_with_keyboard()
 
     def move_with_mouse(self):

@@ -54,6 +54,8 @@ player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
 def run_game():
     game = Game()
     game.player.set_difficulty(selected_option)
+    player.set_control_mode(control_mode)
+    game.player = player
     game.run()
 
 running = True
@@ -70,12 +72,12 @@ while running:
             if mouse_button_rect.collidepoint(mouse_pos):
                 selected_option = "Easy"
                 player.set_difficulty(selected_option)
-                player.set_control_mode("mouse") 
+                control_mode = "mouse"
                 run_game()
             elif keyboard_button_rect.collidepoint(mouse_pos):
                 selected_option = "Easy"
                 player.set_difficulty(selected_option)
-                player.set_control_mode("keyboard") 
+                control_mode = "keyboard"
                 run_game()
             if dropdown_rect.collidepoint(mouse_pos):
                 options_visible = not options_visible
@@ -88,6 +90,7 @@ while running:
             if quit_button_rect.collidepoint(mouse_pos):
                 pygame.quit()
                 sys.exit()
+    
     
     screen.fill(BLACK)
     

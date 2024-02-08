@@ -47,7 +47,6 @@ class Game:
     def set_control_mode(self, mode):
         self.player.set_control_mode(mode)
 
-
     def run(self):
         SCREEN_WIDTH = 1280
         SCREEN_HEIGHT = 720
@@ -125,7 +124,6 @@ class Game:
                     running = False
 
             self.clock.tick(60)
-
 
     def show_game_over_screen(self):
         font = pygame.font.Font(None, 36)
