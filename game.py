@@ -120,7 +120,9 @@ class Game:
                     self.show_game_over_screen()
 
             else:
-                self.show_game_over_screen()
+                action = self.show_game_over_screen()
+                if action == "return_to_home":
+                    running = False
 
             self.clock.tick(60)
 
@@ -148,4 +150,4 @@ class Game:
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if return_button_text_rect.collidepoint(event.pos):
-                        return
+                        return "return_to_home" 
