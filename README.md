@@ -13,24 +13,39 @@ Assurez-vous d'avoir les versions spécifiées des packages suivants installées
 
 ### Installation de l'environnement du projet 
 
-Reprise de l'environnement 
-<lien de l'environnement ici>
-[Uploading agario.yaml…]()
+Télécharger l'environnement
 
+https://github.com/B2-Info-23-24/agarpyo-b2-a-D0ria/releases
 
-Quelques commandes pour créer ou activer l'environnement (sinon mettre en graphique avec photos)
+![image](https://github.com/B2-Info-23-24/agarpyo-b2-a-D0ria/assets/112953319/bd39f624-8942-46d4-b51c-124dc43b2773)
 
-```bash
-conda env create -f environment.yml
-conda activate your-environment-name
-```
+Ouvrir l'environnement avec Anaconda Navigator
+
+Cliquer sur Import
+ ![image](https://github.com/B2-Info-23-24/agarpyo-b2-a-D0ria/assets/112953319/f9df6199-bee2-4705-841c-fa3141bd19a8)
+
+Sélectionner l'environnement téléchargé
+
+![image](https://github.com/B2-Info-23-24/agarpyo-b2-a-D0ria/assets/112953319/6b1de50e-4a82-455b-9aff-9287f465fedb)
+
+Laisser Agario ou renommer l'environnement si besoin et cliquer sur import 
+
+Revenir sur Home et bien sélectionner le nouvel environnement et ouvrir Visual Studio Code pour passer à l'étape 2 de l'installation du projet en cliquant sur Launch.
+
+![image](https://github.com/B2-Info-23-24/agarpyo-b2-a-D0ria/assets/112953319/4dee08af-a044-4356-8f3c-4c92bc77800d)
+
 
 ### Installer le projet 
-Clonez le dépôt sur votre machine locale.
+Vous venez d'ouvrir Visual Studio Code, cloner le repository
 
 ```bash
-git clone lien du git
+git clone https://github.com/B2-Info-23-24/agarpyo-b2-a-D0ria.git
 ```
+
+Aller sur main.py et lancer le projet 
+
+![image](https://github.com/B2-Info-23-24/agarpyo-b2-a-D0ria/assets/112953319/f3b9f5fc-a8ef-4fca-a9b2-70c66e63ed9c)
+
 
 ### En cas de problèmes 
 Installer le package Pygame
@@ -42,10 +57,10 @@ pip install pygame
 ## Utilisation
 
 ### Fonctionnalités
-Sélection de la difficulté: Mode easy, normal, hard disponible
-Sélection du mode de jeu : clavier vs souris
-Temps imparti de 60 secondes
-Nouveau : Téléportation sur la map
+- bSélection de la difficulté: Mode easy, normal, hard disponible
+- Sélection du mode de jeu : clavier vs souris
+- Temps imparti de 60 secondes
+- Nouveau : Téléportation sur la map
 
 ### Quelques commandes de base
 
@@ -55,8 +70,8 @@ Pendant la partie:
 - Cliquer deux fois sur retour à l'accueil pour rechoisir sa difficulté
 
 A l'accueil:
-q: permet de quitter l'application
-Appuyer sur le mode déjà validé pour changer la difficulté 
+- q: permet de quitter l'application
+- Appuyer sur le mode déjà validé pour changer la difficulté 
 
 
 ## Contact
