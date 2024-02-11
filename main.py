@@ -70,12 +70,12 @@ while running:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = pygame.mouse.get_pos()
             if mouse_button_rect.collidepoint(mouse_pos):
-                selected_option = "Easy"
+                selected_option = player.difficulty
                 player.set_difficulty(selected_option)
                 control_mode = "mouse"
                 run_game()
             elif keyboard_button_rect.collidepoint(mouse_pos):
-                selected_option = "Easy"
+                selected_option = player.difficulty
                 player.set_difficulty(selected_option)
                 control_mode = "keyboard"
                 run_game()
@@ -90,8 +90,7 @@ while running:
             if quit_button_rect.collidepoint(mouse_pos):
                 pygame.quit()
                 sys.exit()
-    
-    
+
     screen.fill(BLACK)
     
     if player.control_mode == "mouse":
