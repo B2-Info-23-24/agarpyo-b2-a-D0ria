@@ -19,7 +19,7 @@ Get the environnement with the following link:
 
 https://github.com/B2-Info-23-24/agarpyo-b2-a-D0ria/releases/download/published/agario.yaml
 
-![image](https://github.com/B2-Info-23-24/agarpyo-b2-a-D0ria/assets/112953319/bd39f624-8942-46d4-b51c-124dc43b2773)
+![image](https://github.com/B2-Info-23-24/agarpyo-b2-a-D0ria/assets/112953319/acf13939-81cb-41db-b35f-1a8d2f272249)
 
 Open the environment Anaconda Navigator
 
