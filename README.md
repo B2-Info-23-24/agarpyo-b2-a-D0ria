@@ -8,6 +8,8 @@ Be sure to have the specified versions of the following packages on your system,
 
 - Python V 3.11.7
 - package pygame V 2.5.2
+- Anaconda Navigator
+- Visual Studio Code
 
 ## Launch procedure 
 
